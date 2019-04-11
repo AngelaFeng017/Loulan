@@ -2,6 +2,8 @@ package net.romatic.jade;
 
 import net.romatic.TestCaseBase;
 import net.romatic.com.collection.Models;
+import net.romatic.utils.JsonUtils;
+
 import org.junit.Test;
 
 import java.lang.reflect.Field;
@@ -42,8 +44,9 @@ public class RelationWithTest extends TestCaseBase {
     @Test
     public void testBelongsToMany() {
         Post post = Post.query().with("tags").first();
+        System.out.println(JsonUtils.toJson(post));
 
-        dump(post, post.tags);
+//        dump(post, post.tags);
     }
 
     @Test

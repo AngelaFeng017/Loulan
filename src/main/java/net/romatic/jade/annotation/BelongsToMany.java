@@ -39,7 +39,7 @@ public @interface BelongsToMany {
      *
      * @return
      */
-    String table();
+    String table() default "";
 
     Class<? extends RelationBuilder> builder() default BelongsToManyBuilder.class;
 }

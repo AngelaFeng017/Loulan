@@ -33,7 +33,7 @@ public class RelationHasTest extends TestCaseBase {
 
     @Test
     public void testDemo() throws NoSuchMethodException {
-        Tag.query().where(PostQuery::published, 3, "a");
+//        Tag.query().where(PostQuery::published, 3, "a");
 //        Method method = PostQuery.class.getMethod("published");
 //        dump(method.isDefault());
     }

@@ -160,16 +160,24 @@ public class Builder<M extends Model> implements Query {
         return models;
     }
 
+    /**
+     * 给models加载关联的属性
+     * @param models
+     * @param relationName
+     * @return
+     */
     public Models<M> eagerLoadRelation(Models<M> models, String relationName) {
 
         RelationBuilder relation = getRelation(relationName);
         if (relation != null) {
+            // 获取预加载的queryBuilder
             relation.withEagerConstraints(models);
             //System.out.println("relation SQL: " + relation.getBuilder().getQuery().toSQL());
-            Models objs = relation.getBuilder().get();
-            System.out.println(JsonUtils.toJson(objs));
-
-            return relation.match(models, objs, relationName);
+            // 执行sql
+            Models relateds = relation.getBuilder().get();
+            System.out.println(JsonUtils.toJson(relateds));
+            // 把relateds封装到models上
+            return relation.match(models, relateds, relationName);
         }
 
         return models;

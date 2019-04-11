@@ -85,13 +85,13 @@ public abstract class RelationBuilder {
     public abstract void initBy(Field field);
 
     /**
-     * 给 builder 添加关联约束
+     * 给 builder 添加关联约束 (拼接builder)
      */
     public abstract void withEagerConstraints();
 
     /**
      * 添加关联Query的关联约束
-     *
+     * 获取预加载的queryBuilder
      * @param models
      */
     public abstract void withEagerConstraints(List<? extends Model> models);

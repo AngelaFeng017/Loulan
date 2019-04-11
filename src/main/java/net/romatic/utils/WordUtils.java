@@ -15,7 +15,11 @@ public class WordUtils {
         return word.substring(0, 1).toLowerCase() + word.substring(1);
     }
 
-
+    /**
+     * 转换为蛇形变量名（下划线格式）
+     * @param word
+     * @return
+     */
     public static String snake(String word) {
         return snake(word, "_");
     }
